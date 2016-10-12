@@ -29,28 +29,34 @@ function runSelect(event) {
 }
 */
 
+function insertButton(btn) {
+  function waitForSite() {
+    var cpsite = document.getElementById('cpsite').contentDocument;
+    var allcouponitems = cpsite.getElementById('all-coupon-items0');
+    if (allcouponitems != null) {
+      clearInterval(waitForSiteTimer);
+      allcouponitems.parentNode.insertBefore(btn, allcouponitems);
+    }
+  }
+
+  // Wait for site to finish loading the iframe before inserting button.
+  var waitForSiteTimer = setInterval(waitForSite, 100);
+}
+
 function init() {
   // Make a new button for our action.
   var newbutton = document.createElement('button');
   newbutton.setAttribute('name', 'load_all_to_card');
   newbutton.setAttribute('id', 'load_all_to_card');
-  newbutton.setAttribute('value', 'Load All To Card');
   newbutton.setAttribute('style', 'background-color: #E82A24; color: #fff; font-weight: 700; border: none; padding: 6px 10px; cursor: pointer;');
   newbutton.appendChild(document.createTextNode('Load All To Card'));
 
-  var iframe = document.getElementById('cpsite');
-  var cpsite = iframe.contentDocument;
-
-  var allcouponitems = cpsite.getElementById('all-coupon-items0');
-  console.log(allcouponitems);
-
-  allcouponitems.parentNode.insertBefore(newbutton, allcouponitems);
-
+  insertButton(newbutton);
   /*
   newbutton.addEventListener('click', runSelect);
   */
 }
 
-setTimeout(init, 3000);
+init();
 
 // -- The End --
