@@ -1,6 +1,6 @@
 {
     "manifest_version": 2,
-    "name": "shoprite_load_all_to_card",
+    "name": "ShopRite - Load All To Card",
     "version": "0.0.1",
 
     "description": "In the Digital Coupon Center, load all coupons to the ShopRite card.",

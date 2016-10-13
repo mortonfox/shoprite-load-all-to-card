@@ -26,8 +26,8 @@ function insertButton(btn) {
 function init() {
   // Make a new button for our action.
   var newbutton = document.createElement('button');
-  newbutton.setAttribute('name', 'load_all_to_card');
-  newbutton.setAttribute('id', 'load_all_to_card');
+  newbutton.name = 'load_all_to_card';
+  newbutton.id = 'load_all_to_card';
   newbutton.setAttribute('style', 'background-color: #E82A24; color: #fff; font-weight: 700; border: none; padding: 6px 10px; cursor: pointer;');
   newbutton.appendChild(document.createTextNode('Load All To Card'));
   newbutton.addEventListener('click', runSelect);
