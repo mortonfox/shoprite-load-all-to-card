@@ -3,6 +3,8 @@ function runSelect(event) {
 
   var cpsite = document.getElementById('cpsite').contentDocument;
   var allcouponitems = cpsite.getElementById('all-coupon-items0');
+
+  // Click on every "load to card" button.
   var load2crd = allcouponitems.getElementsByClassName('load2crd');
   for (var btn of load2crd) {
     btn.click();
@@ -28,7 +30,7 @@ function init() {
   var newbutton = document.createElement('button');
   newbutton.name = 'load_all_to_card';
   newbutton.id = 'load_all_to_card';
-  newbutton.setAttribute('style', 'background-color: #E82A24; color: #fff; font-weight: 700; border: none; padding: 6px 10px; cursor: pointer;');
+  newbutton.style.cssText = 'background-color: #E82A24; color: #fff; font-weight: 700; border: none; padding: 6px 10px; cursor: pointer;';
   newbutton.appendChild(document.createTextNode('Load All To Card'));
   newbutton.addEventListener('click', runSelect);
 
