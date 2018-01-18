@@ -1,23 +1,27 @@
 function runSelect(event) {
   event.preventDefault();
 
-  var cpsite = document.getElementById('cpsite').contentDocument;
-  var allcouponitems = cpsite.getElementById('all-coupon-items0');
-
   // Click on every "load to card" button.
-  var load2crd = allcouponitems.getElementsByClassName('load2crd');
+  var load2crd = document.getElementsByClassName('available-to-clip');
+  console.log(load2crd.length + ' coupons found');
+  var clicked = 0;
   for (var btn of load2crd) {
-    btn.click();
+    // Skip all hidden buttons, i.e. coupons that have already been loaded to
+    // card.
+    if (!btn.classList.contains('ng-hide')) {
+      btn.click();
+      clicked++;
+    }
   }
+  console.log(clicked + ' coupons clicked');
 }
 
 function insertButton(btn) {
   function waitForSite() {
-    var cpsite = document.getElementById('cpsite').contentDocument;
-    var allcouponitems = cpsite.getElementById('all-coupon-items0');
-    if (allcouponitems != null) {
+    var couponapp = document.getElementsByClassName('coupon-app');
+    if (couponapp != null) {
       clearInterval(waitForSiteTimer);
-      allcouponitems.parentNode.insertBefore(btn, allcouponitems);
+      couponapp[0].parentNode.insertBefore(btn, couponapp[0]);
     }
   }
 

@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "ShopRite - Load All To Card",
-    "version": "0.0.1",
+    "version": "0.0.2",
 
     "description": "In the Digital Coupon Center, load all coupons to the ShopRite card.",
 
@@ -12,7 +12,7 @@
     "content_scripts": [
 	{
 	    "matches": [
-		"http://coupons.shoprite.com/main.html"
+		"http://coupons.shoprite.com/"
 	    ],
 	    "js": ["main.js"]
 	}
