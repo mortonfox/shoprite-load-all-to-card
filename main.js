@@ -18,14 +18,14 @@ function runSelect(event) {
 
 function insertButton(btn) {
   function waitForSite() {
-    var couponapp = document.getElementsByClassName('coupon-app');
-    if (couponapp != null) {
+    var targetelem = document.getElementsByClassName('coupon-list');
+    if (targetelem != null) {
       clearInterval(waitForSiteTimer);
-      couponapp[0].parentNode.insertBefore(btn, couponapp[0]);
+      targetelem[0].parentNode.insertBefore(btn, targetelem[0]);
     }
   }
 
-  // Wait for site to finish loading the iframe before inserting button.
+  // Wait for site to finish loading before inserting button.
   var waitForSiteTimer = setInterval(waitForSite, 100);
 }
 
