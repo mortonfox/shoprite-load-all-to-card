@@ -12,7 +12,7 @@
     "content_scripts": [
 	{
 	    "matches": [
-		"http://coupons.shoprite.com/"
+		"http://coupons.shoprite.com/*"
 	    ],
 	    "js": ["main.js"]
 	}
