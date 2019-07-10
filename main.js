@@ -5,21 +5,19 @@ function runSelect(event) {
   var load2crd = document.getElementsByClassName('available-to-clip');
   console.log(load2crd.length + ' coupons found');
   var clicked = 0;
-  for (var btn of load2crd) {
-    // Skip all hidden buttons, i.e. coupons that have already been loaded to
-    // card.
-    if (!btn.classList.contains('ng-hide')) {
-      btn.click();
-      clicked++;
-    }
+
+  // Iterate in reverse because clicking on a button mutates the coupon list.
+  for (var btn of Array.from(load2crd).reverse()) {
+    btn.click();
+    clicked++;
   }
   console.log(clicked + ' coupons clicked');
 }
 
 function insertButton(btn) {
   function waitForSite() {
-    var targetelem = document.getElementsByClassName('coupon-list');
-    if (targetelem != null) {
+    var targetelem = document.getElementsByClassName('coupon-app');
+    if (targetelem !== null && targetelem[0] !== undefined) {
       clearInterval(waitForSiteTimer);
       targetelem[0].parentNode.insertBefore(btn, targetelem[0]);
     }
@@ -34,7 +32,7 @@ function init() {
   var newbutton = document.createElement('button');
   newbutton.name = 'load_all_to_card';
   newbutton.id = 'load_all_to_card';
-  newbutton.style.cssText = 'background-color: #E82A24; color: #fff; font-weight: 700; border: none; padding: 6px 10px; cursor: pointer;';
+  newbutton.style.cssText = 'background-color: #E82A24; color: #fff; font-weight: 700; border: none; padding: 6px 10px; cursor: pointer; margin: 5px';
   newbutton.appendChild(document.createTextNode('Load All To Card'));
   newbutton.addEventListener('click', runSelect);
 
