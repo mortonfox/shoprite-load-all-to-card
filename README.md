@@ -4,7 +4,7 @@
 
 This is a Chrome extension that adds a "Load All To Card" button to the
 ShopRite [Digital Coupon
-Center](http://coupons.shoprite.com/). The Javascript action on this
+Center](https://coupons.shoprite.com/). The Javascript action on this
 button will click on all the coupons in one shot, adding all of them to the
 card.
 
