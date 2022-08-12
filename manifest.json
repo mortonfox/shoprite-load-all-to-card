@@ -12,9 +12,11 @@
     "content_scripts": [
 	{
 	    "matches": [
-		"*://coupons.shoprite.com/*"
+                "*://www.shoprite.com/sm/planning/rsid/538/digital-coupon*",
+                "*://shop-rite-web-prod.azurewebsites.net/*"
 	    ],
-	    "js": ["main.js"]
+	    "js": ["main.js"],
+            "all_frames": true
 	}
     ]
 }
