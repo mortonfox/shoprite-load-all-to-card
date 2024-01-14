@@ -34,7 +34,22 @@ function init() {
   var newbutton = document.createElement('button');
   newbutton.name = 'load_all_to_card';
   newbutton.id = 'load_all_to_card';
-  newbutton.style.cssText = 'background-color: #E82A24; color: #fff; font-weight: 700; border: none; padding: 6px 10px; cursor: pointer; margin: 5px';
+  newbutton.style.cssText = 'background-color: #fff; color: #E82A24; font-weight: 700; border: solid #E82A24; padding: 6px 10px; cursor: pointer; margin: 5px';
+
+  newbutton.addEventListener('mouseenter',
+    () => {
+      newbutton.style.color = '#fff';
+      newbutton.style.backgroundColor = '#E82A24';
+    }
+  );
+
+  newbutton.addEventListener('mouseleave',
+    () => {
+      newbutton.style.color = '#E82A24';
+      newbutton.style.backgroundColor = '#fff';
+    }
+  );
+
   newbutton.appendChild(document.createTextNode('Load All To Card'));
   newbutton.addEventListener('click', runSelect);
 
