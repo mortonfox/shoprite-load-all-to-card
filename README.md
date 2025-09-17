@@ -12,21 +12,17 @@ card.
 
 git clone this repository to your local disk or download the zip file and extract.
 
-Go to the Chrome extensions page (chrome://extensions). You'll need to enable
-developer mode in order to load an unpacked extension.
+Go to the Chrome extensions page (chrome://extensions). You'll need to enable developer mode in order to load an unpacked extension.
 
-Click on "Load unpacked extension" and navigate to the folder in which you
-cloned or extracted the source files. Select this folder to load the extension.
+Click on "Load unpacked extension" and navigate to the folder in which you cloned or extracted the source files. Select this folder to load the extension.
 
 ## Usage
 
-Once you've installed and enabled this extension, go to the ShopRite Digital
-Coupon Center and find the "Load All To Card" button just above the "Digital
-Coupon Center" heading. Click on it and it'll load all the coupons to your
-card.
+Once you've installed and enabled this extension, go to the ShopRite Digital Coupon Center and find the "Load All To Card" button just above the "Digital Coupon Center" heading.
+
+Click on it and the browser extension will:
+
+* click on the Show All button to show all the coupons
+* click on coupons that are available to load to add them to your card
 
 <img width="800" height="325" alt="Load All To Card button" src="https://github.com/user-attachments/assets/97b753af-b5d5-4130-a670-99724a19bf41" />
-
-Note: this button works only on the current page of coupons. If you want to get
-all the coupons at once, click on "Show All" first before clicking the "Load
-All To Card" button.
