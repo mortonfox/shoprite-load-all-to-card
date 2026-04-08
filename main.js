@@ -1,21 +1,32 @@
 // jshint esversion: 6
 
-function runSelect(event) {
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function runSelect(event) {
   event.preventDefault();
 
-  let showAllBtn = [...document.querySelectorAll('button')].find(el => el.innerText.toLowerCase().includes('show all'));
-  if (showAllBtn) {
-    console.log('Clicking Show All button...');
-    showAllBtn.click();
+  // Keep scrolling until all buttons show up.
+  let btns = [...document.querySelectorAll('.btn-load-to-card, .btn-loaded-to-card')];
+  let btnCount = btns.length;
+  for (;;) {
+    btns[btns.length - 1].scrollIntoView({ block: 'center' });
+    await sleep(200);
+    btns = [...document.querySelectorAll('.btn-load-to-card, .btn-loaded-to-card')];
+    // console.log(btns.length, btnCount);
+    if (btns.length <= btnCount) break;
+    btnCount = btns.length;
   }
 
   // Click on every "load to card" button.
-  let load2crd = document.getElementsByClassName('available-to-clip');
+  let load2crd = [...document.querySelectorAll('.btn-load-to-card')];
   console.log(load2crd.length + ' coupons found');
+
   let clicked = 0;
 
   // Iterate in reverse because clicking on a button mutates the coupon list.
-  for (let btn of Array.from(load2crd).reverse()) {
+  for (let btn of load2crd.reverse()) {
     btn.click();
     clicked++;
   }
