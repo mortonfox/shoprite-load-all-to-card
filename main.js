@@ -31,7 +31,7 @@ async function runSelect(event) {
     clicked++;
   }
 
-  alert(`Clicked ${clicked} coupons clicked`);
+  alert(`Clicked on ${clicked} coupons`);
 }
 
 function insertButton(btn) {
